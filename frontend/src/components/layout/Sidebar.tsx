@@ -78,8 +78,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         {/* Brand Logo Header */}
         <div className="flex h-16 items-center justify-between px-5 border-b border-zinc-800 bg-black">
           <div className="flex items-center gap-3">
-            <div className="h-10 w-10 overflow-hidden rounded-xl bg-black border border-cyan-500/30 p-0.5 shadow-md shadow-cyan-500/20">
-              <img src="/logo.png" alt="Distribora Logo" className="h-full w-full object-cover rounded-lg" />
+            <div className="h-10 w-10 overflow-hidden rounded-xl bg-zinc-950 border border-cyan-500/40 p-1.5 shadow-md shadow-cyan-500/20 flex items-center justify-center">
+              <img src="/logo.png" alt="Distribora Icon" className="h-full w-full object-contain" />
             </div>
             <div>
               <h1 className="text-base font-extrabold text-white tracking-tight leading-tight">Distribora</h1>

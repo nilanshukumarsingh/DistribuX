@@ -45,8 +45,8 @@ export const LoginPage: React.FC = () => {
     <div className="flex min-h-screen items-center justify-center bg-black p-4 text-zinc-100">
       <div className="w-full max-w-md space-y-6">
         <div className="text-center">
-          <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-600 text-white shadow-lg shadow-cyan-500/20 mb-3 border border-cyan-400/30">
-            <img src="/logo.png" alt="Distribora Logo" className="w-full h-full object-cover rounded-xl" />
+          <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-zinc-950 text-cyan-400 shadow-xl shadow-cyan-500/10 mb-3 border border-cyan-500/40 p-2 backdrop-blur-md">
+            <img src="/logo.png" alt="Distribora Icon" className="w-full h-full object-contain" />
           </div>
           <h2 className="text-3xl font-extrabold text-white tracking-tight">Distribora</h2>
           <p className="text-xs text-zinc-400 mt-1 uppercase tracking-wider font-medium">
