@@ -79,10 +79,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
         <div className="flex h-16 items-center justify-between px-5 border-b border-zinc-800 bg-black">
           <div className="flex items-center gap-3">
             <div className="h-10 w-10 overflow-hidden rounded-xl bg-black border border-cyan-500/30 p-0.5 shadow-md shadow-cyan-500/20">
-              <img src="/logo.png" alt="DistribuX Logo" className="h-full w-full object-cover rounded-lg" />
+              <img src="/logo.png" alt="Distribora Logo" className="h-full w-full object-cover rounded-lg" />
             </div>
             <div>
-              <h1 className="text-base font-extrabold text-white tracking-tight leading-tight">DistribuX</h1>
+              <h1 className="text-base font-extrabold text-white tracking-tight leading-tight">Distribora</h1>
               <p className="text-[10px] uppercase font-semibold text-cyan-400 tracking-wider">Operations Portal</p>
             </div>
           </div>

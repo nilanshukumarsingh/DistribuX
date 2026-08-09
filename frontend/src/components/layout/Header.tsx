@@ -21,7 +21,7 @@ export const Header: React.FC<HeaderProps> = ({ onToggleSidebar }) => {
         </button>
         <div className="hidden sm:block">
           <span className="text-[11px] font-bold uppercase tracking-widest text-zinc-500">
-            DistribuX Operations Portal
+            Distribora Operations Portal
           </span>
         </div>
       </div>
