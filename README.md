@@ -1,8 +1,11 @@
-# DistribuX
+# Distribora
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.5-blue)](https://www.typescriptlang.org/)
 
 ## Architecture
 
-DistribuX is a role-based internal web application designed for wholesale and distribution operations. It features Customer CRM, Product & Inventory Management, Stock Movement Auditing, and Sales Order Challans. The core business rule is the atomic challan confirmation transaction (`prisma.$transaction`), ensuring stock is deducted safely with zero partial side-effects.
+Distribora is a role-based internal web application designed for wholesale and distribution operations. It features Customer CRM, Product & Inventory Management, Stock Movement Auditing, and Sales Order Challans. The core business rule is the atomic challan confirmation transaction (`prisma.$transaction`), ensuring stock is deducted safely with zero partial side-effects.
 
 ## Tech Stack
 
@@ -18,7 +21,7 @@ DistribuX is a role-based internal web application designed for wholesale and di
 
 ## Submission Links
 
-- **GitHub Repository**: https://github.com/nilanshukumarsingh/DistribuX.git
+- **GitHub Repository**: https://github.com/nilanshukumarsingh/Distribora.git
 - **Live Frontend**: https://distribora.vercel.app
 - **Live Backend API**: https://distribora.onrender.com
 - **Postman Collection**: [docs/postman_collection.json](docs/postman_collection.json)
