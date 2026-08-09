@@ -20,7 +20,7 @@ DistribuX is a role-based internal web application designed for wholesale and di
 
 - **GitHub Repository**: https://github.com/nilanshukumarsingh/DistribuX.git
 - **Live Frontend**: https://distribora.vercel.app
-- **Live Backend API**: [Pending Deployment / Render URL]
+- **Live Backend API**: https://distribora.onrender.com
 - **Postman Collection**: [docs/postman_collection.json](docs/postman_collection.json)
 
 ## Local Setup
