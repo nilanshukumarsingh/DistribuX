@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { Plus, Search, Eye, FileSpreadsheet, CheckCircle2, XCircle, Clock } from 'lucide-react';
-import api from '../api/client';
-import { Challan, Pagination as PaginationType } from '../types';
-import { Button } from '../components/ui/Button';
-import { Input } from '../components/ui/Input';
-import { Select } from '../components/ui/Select';
-import { Badge } from '../components/ui/Badge';
-import { Pagination } from '../components/ui/Pagination';
-import { LoadingSpinner } from '../components/ui/LoadingSpinner';
-import { ErrorAlert } from '../components/ui/ErrorAlert';
-import { useAuth } from '../context/AuthContext';
+import api from '../../api/client';
+import { Challan, Pagination as PaginationType } from '../../types';
+import { Button } from '../../components/ui/Button';
+import { Input } from '../../components/ui/Input';
+import { Select } from '../../components/ui/Select';
+import { Badge } from '../../components/ui/Badge';
+import { Pagination } from '../../components/ui/Pagination';
+import { LoadingSpinner } from '../../components/ui/LoadingSpinner';
+import { ErrorAlert } from '../../components/ui/ErrorAlert';
+import { useAuth } from '../../context/AuthContext';
 
 export const ChallansPage: React.FC = () => {
   const { hasRole } = useAuth();

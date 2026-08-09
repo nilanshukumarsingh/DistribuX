@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Package, Warehouse, Tag, AlertTriangle, Boxes, History } from 'lucide-react';
-import api from '../api/client';
-import { Product, StockMovement } from '../types';
-import { Badge } from '../components/ui/Badge';
-import { LoadingSpinner } from '../components/ui/LoadingSpinner';
-import { ErrorAlert } from '../components/ui/ErrorAlert';
+import api from '../../api/client';
+import { Product, StockMovement } from '../../types';
+import { Badge } from '../../components/ui/Badge';
+import { LoadingSpinner } from '../../components/ui/LoadingSpinner';
+import { ErrorAlert } from '../../components/ui/ErrorAlert';
 
 export const ProductDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();

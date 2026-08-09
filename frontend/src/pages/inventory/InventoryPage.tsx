@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Boxes, Filter, ArrowUpRight, ArrowDownLeft } from 'lucide-react';
-import api from '../api/client';
-import { StockMovement, Pagination as PaginationType } from '../types';
-import { Select } from '../components/ui/Select';
-import { Badge } from '../components/ui/Badge';
-import { Pagination } from '../components/ui/Pagination';
-import { LoadingSpinner } from '../components/ui/LoadingSpinner';
-import { ErrorAlert } from '../components/ui/ErrorAlert';
+import api from '../../api/client';
+import { StockMovement, Pagination as PaginationType } from '../../types';
+import { Select } from '../../components/ui/Select';
+import { Badge } from '../../components/ui/Badge';
+import { Pagination } from '../../components/ui/Pagination';
+import { LoadingSpinner } from '../../components/ui/LoadingSpinner';
+import { ErrorAlert } from '../../components/ui/ErrorAlert';
 
 export const InventoryPage: React.FC = () => {
   const [movements, setMovements] = useState<StockMovement[]>([]);

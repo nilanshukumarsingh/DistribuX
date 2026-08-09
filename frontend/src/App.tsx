@@ -2,16 +2,16 @@ import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { Layout } from './components/layout/Layout';
-import { LoginPage } from './pages/LoginPage';
-import { DashboardPage } from './pages/DashboardPage';
-import { CustomersPage } from './pages/CustomersPage';
-import { CustomerDetailPage } from './pages/CustomerDetailPage';
-import { ProductsPage } from './pages/ProductsPage';
-import { ProductDetailPage } from './pages/ProductDetailPage';
-import { InventoryPage } from './pages/InventoryPage';
-import { ChallansPage } from './pages/ChallansPage';
-import { ChallanCreatePage } from './pages/ChallanCreatePage';
-import { ChallanDetailPage } from './pages/ChallanDetailPage';
+import { LoginPage } from './pages/auth/LoginPage';
+import { DashboardPage } from './pages/dashboard/DashboardPage';
+import { CustomersPage } from './pages/customers/CustomersPage';
+import { CustomerDetailPage } from './pages/customers/CustomerDetailPage';
+import { ProductsPage } from './pages/products/ProductsPage';
+import { ProductDetailPage } from './pages/products/ProductDetailPage';
+import { InventoryPage } from './pages/inventory/InventoryPage';
+import { ChallansPage } from './pages/challans/ChallansPage';
+import { ChallanCreatePage } from './pages/challans/ChallanCreatePage';
+import { ChallanDetailPage } from './pages/challans/ChallanDetailPage';
 import { LoadingSpinner } from './components/ui/LoadingSpinner';
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {

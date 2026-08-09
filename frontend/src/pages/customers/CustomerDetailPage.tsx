@@ -12,14 +12,14 @@ import {
   Send,
   Plus,
 } from 'lucide-react';
-import api from '../api/client';
-import { Customer, CustomerFollowup } from '../types';
-import { Button } from '../components/ui/Button';
-import { Input } from '../components/ui/Input';
-import { Badge } from '../components/ui/Badge';
-import { LoadingSpinner } from '../components/ui/LoadingSpinner';
-import { ErrorAlert } from '../components/ui/ErrorAlert';
-import { useAuth } from '../context/AuthContext';
+import api from '../../api/client';
+import { Customer, CustomerFollowup } from '../../types';
+import { Button } from '../../components/ui/Button';
+import { Input } from '../../components/ui/Input';
+import { Badge } from '../../components/ui/Badge';
+import { LoadingSpinner } from '../../components/ui/LoadingSpinner';
+import { ErrorAlert } from '../../components/ui/ErrorAlert';
+import { useAuth } from '../../context/AuthContext';
 
 export const CustomerDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();

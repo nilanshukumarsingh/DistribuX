@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, FileSpreadsheet, CheckCircle2, XCircle, User, Building, Phone, Calendar, AlertTriangle } from 'lucide-react';
-import api from '../api/client';
-import { Challan } from '../types';
-import { Button } from '../components/ui/Button';
-import { Badge } from '../components/ui/Badge';
-import { Modal } from '../components/ui/Modal';
-import { LoadingSpinner } from '../components/ui/LoadingSpinner';
-import { ErrorAlert } from '../components/ui/ErrorAlert';
-import { useAuth } from '../context/AuthContext';
+import api from '../../api/client';
+import { Challan } from '../../types';
+import { Button } from '../../components/ui/Button';
+import { Badge } from '../../components/ui/Badge';
+import { Modal } from '../../components/ui/Modal';
+import { LoadingSpinner } from '../../components/ui/LoadingSpinner';
+import { ErrorAlert } from '../../components/ui/ErrorAlert';
+import { useAuth } from '../../context/AuthContext';
 
 export const ChallanDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();

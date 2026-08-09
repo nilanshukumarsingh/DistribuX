@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import { ArrowLeft, Plus, Trash2, ShoppingBag, Calculator, AlertCircle } from 'lucide-react';
-import api from '../api/client';
-import { Customer, Product } from '../types';
-import { Button } from '../components/ui/Button';
-import { Select } from '../components/ui/Select';
-import { Input } from '../components/ui/Input';
-import { ErrorAlert } from '../components/ui/ErrorAlert';
-import { LoadingSpinner } from '../components/ui/LoadingSpinner';
+import api from '../../api/client';
+import { Customer, Product } from '../../types';
+import { Button } from '../../components/ui/Button';
+import { Select } from '../../components/ui/Select';
+import { Input } from '../../components/ui/Input';
+import { ErrorAlert } from '../../components/ui/ErrorAlert';
+import { LoadingSpinner } from '../../components/ui/LoadingSpinner';
 
 interface SelectedItem {
   productId: string;

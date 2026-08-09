@@ -11,11 +11,11 @@ import {
   ArrowRight,
   Boxes,
 } from 'lucide-react';
-import api from '../api/client';
-import { DashboardStats } from '../types';
-import { LoadingSpinner } from '../components/ui/LoadingSpinner';
-import { ErrorAlert } from '../components/ui/ErrorAlert';
-import { Badge } from '../components/ui/Badge';
+import api from '../../api/client';
+import { DashboardStats } from '../../types';
+import { LoadingSpinner } from '../../components/ui/LoadingSpinner';
+import { ErrorAlert } from '../../components/ui/ErrorAlert';
+import { Badge } from '../../components/ui/Badge';
 
 export const DashboardPage: React.FC = () => {
   const [stats, setStats] = useState<DashboardStats | null>(null);

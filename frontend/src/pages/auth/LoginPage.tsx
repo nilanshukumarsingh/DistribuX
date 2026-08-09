@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Building2, KeyRound, Mail, UserCheck } from 'lucide-react';
-import { useAuth } from '../context/AuthContext';
-import api from '../api/client';
-import { Button } from '../components/ui/Button';
-import { Input } from '../components/ui/Input';
-import { ErrorAlert } from '../components/ui/ErrorAlert';
+import { useAuth } from '../../context/AuthContext';
+import api from '../../api/client';
+import { Button } from '../../components/ui/Button';
+import { Input } from '../../components/ui/Input';
+import { ErrorAlert } from '../../components/ui/ErrorAlert';
 
 export const LoginPage: React.FC = () => {
   const [email, setEmail] = useState('');
