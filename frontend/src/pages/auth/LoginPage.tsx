@@ -42,49 +42,61 @@ export const LoginPage: React.FC = () => {
   };
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-slate-900 p-4">
+    <div className="flex min-h-screen items-center justify-center bg-black p-4 text-zinc-100">
       <div className="w-full max-w-md space-y-6">
         <div className="text-center">
-          <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-600 text-white shadow-xl shadow-brand-600/30 mb-4">
+          <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-600 text-white shadow-lg shadow-cyan-500/20 mb-3 border border-cyan-400/30">
             <Building2 className="w-8 h-8" />
           </div>
-          <h2 className="text-2xl font-bold text-white tracking-tight">DistribuX</h2>
-          <p className="text-sm text-slate-400 mt-1">Wholesale & Distribution Operations Management</p>
+          <h2 className="text-3xl font-extrabold text-white tracking-tight">DistribuX</h2>
+          <p className="text-xs text-zinc-400 mt-1 uppercase tracking-wider font-medium">
+            Wholesale & Distribution ERP Portal
+          </p>
         </div>
 
-        <div className="rounded-2xl bg-white p-8 shadow-2xl border border-gray-100">
-          <h3 className="text-lg font-semibold text-gray-900 mb-6">Sign In to Your Account</h3>
+        <div className="rounded-2xl bg-zinc-900/90 p-8 shadow-2xl border border-zinc-800 backdrop-blur-md">
+          <h3 className="text-lg font-bold text-zinc-100 mb-6">Sign In to Your Account</h3>
 
           {error && <ErrorAlert message={error} />}
 
           <form onSubmit={handleLogin} className="space-y-4">
-            <Input
-              label="Email Address"
-              type="email"
-              placeholder="user@company.com"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+            <div>
+              <label className="block text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-1.5">
+                Email Address
+              </label>
+              <input
+                type="email"
+                placeholder="user@company.com"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="w-full rounded-xl border border-zinc-800 bg-zinc-950 px-3.5 py-2.5 text-sm text-zinc-100 placeholder-zinc-500 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 transition-all"
+              />
+            </div>
 
-            <Input
-              label="Password"
-              type="password"
-              placeholder="••••••••"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-            />
+            <div>
+              <label className="block text-xs font-semibold text-zinc-400 uppercase tracking-wider mb-1.5">
+                Password
+              </label>
+              <input
+                type="password"
+                placeholder="••••••••"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="w-full rounded-xl border border-zinc-800 bg-zinc-950 px-3.5 py-2.5 text-sm text-zinc-100 placeholder-zinc-500 focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 transition-all"
+              />
+            </div>
 
-            <Button type="submit" className="w-full py-2.5" isLoading={loading}>
+            <Button type="submit" className="w-full py-2.5 bg-cyan-600 hover:bg-cyan-500 text-white font-bold rounded-xl transition-all shadow-md shadow-cyan-600/20" isLoading={loading}>
               Sign In
             </Button>
           </form>
 
-          <div className="mt-8 border-t border-gray-100 pt-6">
+          <div className="mt-8 border-t border-zinc-800/80 pt-6">
             <div className="flex items-center gap-2 mb-3">
-              <UserCheck className="w-4 h-4 text-brand-600" />
-              <p className="text-xs font-semibold uppercase tracking-wider text-gray-500">
+              <UserCheck className="w-4 h-4 text-cyan-400" />
+              <p className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
                 Quick Demo Role Login:
               </p>
             </div>
@@ -92,30 +104,30 @@ export const LoginPage: React.FC = () => {
               <button
                 type="button"
                 onClick={() => setTestRole('admin@company.com', 'Admin123!')}
-                className="rounded-lg border border-purple-200 bg-purple-50 px-2.5 py-1.5 text-xs font-semibold text-purple-800 hover:bg-purple-100 transition-colors text-left"
+                className="rounded-xl border border-purple-500/30 bg-purple-950/40 px-3 py-2 text-xs font-semibold text-purple-300 hover:bg-purple-900/50 hover:border-purple-500/60 transition-all text-left flex items-center gap-1.5"
               >
-                🔑 Admin Role
+                <span>🔑</span> Admin Role
               </button>
               <button
                 type="button"
                 onClick={() => setTestRole('sales@company.com', 'Sales123!')}
-                className="rounded-lg border border-emerald-200 bg-emerald-50 px-2.5 py-1.5 text-xs font-semibold text-emerald-800 hover:bg-emerald-100 transition-colors text-left"
+                className="rounded-xl border border-emerald-500/30 bg-emerald-950/40 px-3 py-2 text-xs font-semibold text-emerald-300 hover:bg-emerald-900/50 hover:border-emerald-500/60 transition-all text-left flex items-center gap-1.5"
               >
-                💼 Sales Role
+                <span>💼</span> Sales Role
               </button>
               <button
                 type="button"
                 onClick={() => setTestRole('warehouse@company.com', 'Warehouse123!')}
-                className="rounded-lg border border-amber-200 bg-amber-50 px-2.5 py-1.5 text-xs font-semibold text-amber-800 hover:bg-amber-100 transition-colors text-left"
+                className="rounded-xl border border-amber-500/30 bg-amber-950/40 px-3 py-2 text-xs font-semibold text-amber-300 hover:bg-amber-900/50 hover:border-amber-500/60 transition-all text-left flex items-center gap-1.5"
               >
-                📦 Warehouse Role
+                <span>📦</span> Warehouse Role
               </button>
               <button
                 type="button"
                 onClick={() => setTestRole('accounts@company.com', 'Accounts123!')}
-                className="rounded-lg border border-sky-200 bg-sky-50 px-2.5 py-1.5 text-xs font-semibold text-sky-800 hover:bg-sky-100 transition-colors text-left"
+                className="rounded-xl border border-sky-500/30 bg-sky-950/40 px-3 py-2 text-xs font-semibold text-sky-300 hover:bg-sky-900/50 hover:border-sky-500/60 transition-all text-left flex items-center gap-1.5"
               >
-                📊 Accounts Role
+                <span>📊</span> Accounts Role
               </button>
             </div>
           </div>
