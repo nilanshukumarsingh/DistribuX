@@ -8,13 +8,13 @@ interface BadgeProps {
 
 export const Badge: React.FC<BadgeProps> = ({ children, variant = 'default', size = 'sm' }) => {
   const variantStyles = {
-    default: 'bg-blue-100 text-blue-800 border-blue-200',
-    success: 'bg-emerald-100 text-emerald-800 border-emerald-200',
-    warning: 'bg-amber-100 text-amber-800 border-amber-200',
-    danger: 'bg-rose-100 text-rose-800 border-rose-200',
-    info: 'bg-sky-100 text-sky-800 border-sky-200',
-    purple: 'bg-purple-100 text-purple-800 border-purple-200',
-    gray: 'bg-gray-100 text-gray-700 border-gray-200',
+    default: 'bg-cyan-950 text-cyan-300 border-cyan-500/40',
+    success: 'bg-emerald-950 text-emerald-300 border-emerald-500/40',
+    warning: 'bg-amber-950 text-amber-300 border-amber-500/40',
+    danger: 'bg-rose-950 text-rose-300 border-rose-500/40',
+    info: 'bg-sky-950 text-sky-300 border-sky-500/40',
+    purple: 'bg-purple-950 text-purple-300 border-purple-500/40',
+    gray: 'bg-zinc-800 text-zinc-300 border-zinc-700',
   };
 
   const sizeStyles = {
