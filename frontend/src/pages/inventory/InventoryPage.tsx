@@ -48,17 +48,17 @@ export const InventoryPage: React.FC = () => {
   }, [typeFilter]);
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 text-zinc-100">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Stock Movements Log</h1>
-          <p className="text-sm text-gray-500 mt-1">Audit log of all inward intake (IN) and sales challan deductions (OUT).</p>
+          <h1 className="text-2xl font-extrabold text-white tracking-tight">Stock Movements Log</h1>
+          <p className="text-xs text-zinc-400 mt-1 font-medium">Audit log of all inward intake (IN) and sales challan deductions (OUT).</p>
         </div>
       </div>
 
       {/* Filter Bar */}
-      <div className="rounded-xl border border-gray-200 bg-white p-4 shadow-xs max-w-xs">
+      <div className="rounded-2xl border border-zinc-800 bg-zinc-900/90 p-4 shadow-xl max-w-xs backdrop-blur-md">
         <Select
           label="Filter Movement Type"
           value={typeFilter}
@@ -77,10 +77,10 @@ export const InventoryPage: React.FC = () => {
       ) : error ? (
         <ErrorAlert message={error} onRetry={() => fetchMovements(1)} />
       ) : (
-        <div className="rounded-xl border border-gray-200 bg-white shadow-xs overflow-hidden">
+        <div className="rounded-2xl border border-zinc-800 bg-zinc-900/90 shadow-xl overflow-hidden backdrop-blur-md">
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-sm text-gray-600">
-              <thead className="bg-gray-50 text-xs font-semibold uppercase tracking-wider text-gray-500 border-b border-gray-200">
+            <table className="w-full text-left text-sm text-zinc-300">
+              <thead className="bg-zinc-950/80 text-[11px] font-bold uppercase tracking-wider text-zinc-400 border-b border-zinc-800">
                 <tr>
                   <th className="px-6 py-3.5">Timestamp</th>
                   <th className="px-6 py-3.5">Product & SKU</th>
@@ -90,22 +90,22 @@ export const InventoryPage: React.FC = () => {
                   <th className="px-6 py-3.5">User</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200">
+              <tbody className="divide-y divide-zinc-800/60">
                 {movements.length === 0 ? (
                   <tr>
-                    <td colSpan={6} className="px-6 py-12 text-center text-gray-500 font-medium">
+                    <td colSpan={6} className="px-6 py-12 text-center text-zinc-500 font-medium">
                       No stock movement entries found.
                     </td>
                   </tr>
                 ) : (
                   movements.map((mov) => (
-                    <tr key={mov.id} className="hover:bg-gray-50/80 transition-colors">
-                      <td className="px-6 py-4 text-xs font-medium text-gray-500">
+                    <tr key={mov.id} className="hover:bg-zinc-800/40 transition-colors">
+                      <td className="px-6 py-4 text-xs font-medium text-zinc-400">
                         {new Date(mov.createdAt).toLocaleString()}
                       </td>
                       <td className="px-6 py-4">
-                        <span className="font-semibold text-gray-900">{mov.product?.name}</span>
-                        <p className="text-xs text-gray-500 font-mono">SKU: {mov.product?.sku}</p>
+                        <span className="font-bold text-white">{mov.product?.name}</span>
+                        <p className="text-xs text-zinc-400 font-mono mt-0.5">SKU: {mov.product?.sku}</p>
                       </td>
                       <td className="px-6 py-4">
                         <Badge variant={mov.type === 'IN' ? 'success' : 'danger'}>
@@ -116,11 +116,11 @@ export const InventoryPage: React.FC = () => {
                           )}
                         </Badge>
                       </td>
-                      <td className="px-6 py-4 font-bold text-gray-900">
+                      <td className="px-6 py-4 font-extrabold text-white">
                         {mov.type === 'IN' ? `+${mov.quantityChanged}` : `-${mov.quantityChanged}`}
                       </td>
-                      <td className="px-6 py-4 text-xs text-gray-700">{mov.reason}</td>
-                      <td className="px-6 py-4 text-xs text-gray-500 font-medium">
+                      <td className="px-6 py-4 text-xs text-zinc-300">{mov.reason}</td>
+                      <td className="px-6 py-4 text-xs text-zinc-400 font-medium">
                         {mov.createdBy?.name} ({mov.createdBy?.role})
                       </td>
                     </tr>

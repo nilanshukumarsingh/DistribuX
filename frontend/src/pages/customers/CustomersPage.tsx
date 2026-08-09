@@ -148,12 +148,12 @@ export const CustomersPage: React.FC = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 text-zinc-100">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Customer CRM</h1>
-          <p className="text-sm text-gray-500 mt-1">Manage accounts, leads, and sales follow-up schedules.</p>
+          <h1 className="text-2xl font-extrabold text-white tracking-tight">Customer CRM</h1>
+          <p className="text-xs text-zinc-400 mt-1 font-medium">Manage accounts, leads, and sales follow-up schedules.</p>
         </div>
         {hasRole('ADMIN', 'SALES') && (
           <Button onClick={openAddModal} className="sm:w-auto">
@@ -164,14 +164,14 @@ export const CustomersPage: React.FC = () => {
       </div>
 
       {/* Filter Bar */}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 rounded-xl border border-gray-200 bg-white p-4 shadow-xs">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-4 rounded-2xl border border-zinc-800 bg-zinc-900/90 p-4 shadow-xl backdrop-blur-md">
         <div className="relative sm:col-span-2">
-          <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
+          <Search className="absolute left-3.5 top-3 h-4 w-4 text-zinc-500" />
           <Input
             placeholder="Search by customer name, business, mobile..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="pl-9"
+            className="pl-10"
           />
         </div>
         <Select
@@ -202,10 +202,10 @@ export const CustomersPage: React.FC = () => {
       ) : error ? (
         <ErrorAlert message={error} onRetry={() => fetchCustomers(1)} />
       ) : (
-        <div className="rounded-xl border border-gray-200 bg-white shadow-xs overflow-hidden">
+        <div className="rounded-2xl border border-zinc-800 bg-zinc-900/90 shadow-xl overflow-hidden backdrop-blur-md">
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-sm text-gray-600">
-              <thead className="bg-gray-50 text-xs font-semibold uppercase tracking-wider text-gray-500 border-b border-gray-200">
+            <table className="w-full text-left text-sm text-zinc-300">
+              <thead className="bg-zinc-950/80 text-[11px] font-bold uppercase tracking-wider text-zinc-400 border-b border-zinc-800">
                 <tr>
                   <th className="px-6 py-3.5">Customer & Business</th>
                   <th className="px-6 py-3.5">Contact Details</th>
@@ -215,33 +215,33 @@ export const CustomersPage: React.FC = () => {
                   <th className="px-6 py-3.5 text-right">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200">
+              <tbody className="divide-y divide-zinc-800/60">
                 {customers.length === 0 ? (
                   <tr>
-                    <td colSpan={6} className="px-6 py-12 text-center text-gray-500 font-medium">
+                    <td colSpan={6} className="px-6 py-12 text-center text-zinc-500 font-medium">
                       No customer records match your filter criteria.
                     </td>
                   </tr>
                 ) : (
                   customers.map((cust) => (
-                    <tr key={cust.id} className="hover:bg-gray-50/80 transition-colors">
+                    <tr key={cust.id} className="hover:bg-zinc-800/40 transition-colors">
                       <td className="px-6 py-4">
-                        <Link to={`/customers/${cust.id}`} className="font-semibold text-gray-900 hover:text-brand-600">
+                        <Link to={`/customers/${cust.id}`} className="font-bold text-white hover:text-cyan-400 transition-colors">
                           {cust.name}
                         </Link>
-                        <p className="text-xs text-gray-500 flex items-center gap-1 mt-0.5">
-                          <Building className="w-3.5 h-3.5" />
+                        <p className="text-xs text-zinc-400 flex items-center gap-1 mt-0.5">
+                          <Building className="w-3.5 h-3.5 text-zinc-500" />
                           {cust.businessName} {cust.gstNumber ? `• GST: ${cust.gstNumber}` : ''}
                         </p>
                       </td>
                       <td className="px-6 py-4 text-xs font-medium">
-                        <div className="flex items-center gap-1 text-gray-700">
-                          <Phone className="w-3.5 h-3.5 text-gray-400" />
+                        <div className="flex items-center gap-1.5 text-zinc-300">
+                          <Phone className="w-3.5 h-3.5 text-zinc-500" />
                           {cust.mobile}
                         </div>
                         {cust.email && (
-                          <div className="flex items-center gap-1 text-gray-500 mt-1">
-                            <Mail className="w-3.5 h-3.5 text-gray-400" />
+                          <div className="flex items-center gap-1.5 text-zinc-400 mt-1">
+                            <Mail className="w-3.5 h-3.5 text-zinc-500" />
                             {cust.email}
                           </div>
                         )}
@@ -254,18 +254,18 @@ export const CustomersPage: React.FC = () => {
                       </td>
                       <td className="px-6 py-4 text-xs font-medium">
                         {cust.followupDate ? (
-                          <span className="text-purple-700 bg-purple-50 px-2 py-1 rounded-md border border-purple-200">
+                          <span className="text-purple-300 bg-purple-950 px-2.5 py-1 rounded-lg border border-purple-500/40 font-bold">
                             {new Date(cust.followupDate).toLocaleDateString()}
                           </span>
                         ) : (
-                          <span className="text-gray-400">None set</span>
+                          <span className="text-zinc-500">None set</span>
                         )}
                       </td>
                       <td className="px-6 py-4 text-right">
                         <div className="flex items-center justify-end gap-2">
                           <Link
                             to={`/customers/${cust.id}`}
-                            className="p-1.5 text-gray-500 hover:text-brand-600 hover:bg-gray-100 rounded-lg transition-colors"
+                            className="p-1.5 text-zinc-400 hover:text-cyan-400 hover:bg-zinc-800 rounded-xl transition-all"
                             title="View Customer Details"
                           >
                             <Eye className="w-4 h-4" />
@@ -273,7 +273,7 @@ export const CustomersPage: React.FC = () => {
                           {hasRole('ADMIN', 'SALES') && (
                             <button
                               onClick={() => openEditModal(cust)}
-                              className="p-1.5 text-gray-500 hover:text-amber-600 hover:bg-gray-100 rounded-lg transition-colors"
+                              className="p-1.5 text-zinc-400 hover:text-amber-400 hover:bg-zinc-800 rounded-xl transition-all"
                               title="Edit Customer"
                             >
                               <Edit2 className="w-4 h-4" />

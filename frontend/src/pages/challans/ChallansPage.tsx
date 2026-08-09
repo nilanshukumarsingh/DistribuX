@@ -65,12 +65,12 @@ export const ChallansPage: React.FC = () => {
   };
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 text-zinc-100">
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900">Sales Challans Management</h1>
-          <p className="text-sm text-gray-500 mt-1">
+          <h1 className="text-2xl font-extrabold text-white tracking-tight">Sales Challans Management</h1>
+          <p className="text-xs text-zinc-400 mt-1 font-medium">
             Create draft sales challans, review item quantities, and execute atomic stock deductions upon confirmation.
           </p>
         </div>
@@ -85,14 +85,14 @@ export const ChallansPage: React.FC = () => {
       </div>
 
       {/* Filter Bar */}
-      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 rounded-xl border border-gray-200 bg-white p-4 shadow-xs">
+      <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 rounded-2xl border border-zinc-800 bg-zinc-900/90 p-4 shadow-xl backdrop-blur-md">
         <div className="relative sm:col-span-2">
-          <Search className="absolute left-3 top-2.5 h-4 w-4 text-gray-400" />
+          <Search className="absolute left-3.5 top-3 h-4 w-4 text-zinc-500" />
           <Input
             placeholder="Search by challan # or customer name..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="pl-9"
+            className="pl-10"
           />
         </div>
         <Select
@@ -113,10 +113,10 @@ export const ChallansPage: React.FC = () => {
       ) : error ? (
         <ErrorAlert message={error} onRetry={() => fetchChallans(1)} />
       ) : (
-        <div className="rounded-xl border border-gray-200 bg-white shadow-xs overflow-hidden">
+        <div className="rounded-2xl border border-zinc-800 bg-zinc-900/90 shadow-xl overflow-hidden backdrop-blur-md">
           <div className="overflow-x-auto">
-            <table className="w-full text-left text-sm text-gray-600">
-              <thead className="bg-gray-50 text-xs font-semibold uppercase tracking-wider text-gray-500 border-b border-gray-200">
+            <table className="w-full text-left text-sm text-zinc-300">
+              <thead className="bg-zinc-950/80 text-[11px] font-bold uppercase tracking-wider text-zinc-400 border-b border-zinc-800">
                 <tr>
                   <th className="px-6 py-3.5">Challan Number</th>
                   <th className="px-6 py-3.5">Customer & Business</th>
@@ -127,39 +127,39 @@ export const ChallansPage: React.FC = () => {
                   <th className="px-6 py-3.5 text-right">Actions</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-gray-200">
+              <tbody className="divide-y divide-zinc-800/60">
                 {challans.length === 0 ? (
                   <tr>
-                    <td colSpan={7} className="px-6 py-12 text-center text-gray-500 font-medium">
+                    <td colSpan={7} className="px-6 py-12 text-center text-zinc-500 font-medium">
                       No sales challans found matching your filter criteria.
                     </td>
                   </tr>
                 ) : (
                   challans.map((ch) => (
-                    <tr key={ch.id} className="hover:bg-gray-50/80 transition-colors">
+                    <tr key={ch.id} className="hover:bg-zinc-800/40 transition-colors">
                       <td className="px-6 py-4">
-                        <Link to={`/challans/${ch.id}`} className="font-bold text-brand-600 hover:underline font-mono">
+                        <Link to={`/challans/${ch.id}`} className="font-bold text-cyan-400 hover:underline font-mono">
                           {ch.challanNumber}
                         </Link>
                       </td>
                       <td className="px-6 py-4">
-                        <p className="font-semibold text-gray-900">{ch.customer?.name}</p>
-                        <p className="text-xs text-gray-500">{ch.customer?.businessName}</p>
+                        <p className="font-bold text-white">{ch.customer?.name}</p>
+                        <p className="text-xs text-zinc-400">{ch.customer?.businessName}</p>
                       </td>
-                      <td className="px-6 py-4 font-semibold text-gray-900">{ch.totalQuantity} items</td>
-                      <td className="px-6 py-4 font-bold text-gray-900">
+                      <td className="px-6 py-4 font-bold text-white">{ch.totalQuantity} items</td>
+                      <td className="px-6 py-4 font-extrabold text-white">
                         ₹{ch.totalAmount.toLocaleString('en-IN', { minimumFractionDigits: 2 })}
                       </td>
                       <td className="px-6 py-4">
                         <Badge variant={statusBadges[ch.status]}>{ch.status}</Badge>
                       </td>
-                      <td className="px-6 py-4 text-xs text-gray-500">
+                      <td className="px-6 py-4 text-xs text-zinc-400">
                         {new Date(ch.createdAt).toLocaleDateString()}
                       </td>
                       <td className="px-6 py-4 text-right">
                         <Link
                           to={`/challans/${ch.id}`}
-                          className="inline-flex items-center gap-1 px-3 py-1.5 bg-brand-50 text-brand-700 text-xs font-semibold rounded-lg hover:bg-brand-100 transition-colors border border-brand-200"
+                          className="inline-flex items-center gap-1 px-3 py-1.5 bg-cyan-950 text-cyan-300 text-xs font-bold rounded-xl hover:bg-cyan-900 transition-all border border-cyan-500/40"
                         >
                           <Eye className="w-3.5 h-3.5" /> View Details
                         </Link>

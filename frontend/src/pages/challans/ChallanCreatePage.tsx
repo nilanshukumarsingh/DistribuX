@@ -128,11 +128,11 @@ export const ChallanCreatePage: React.FC = () => {
   if (error) return <ErrorAlert message={error} />;
 
   return (
-    <div className="space-y-6 max-w-5xl mx-auto">
+    <div className="space-y-6 max-w-5xl mx-auto text-zinc-100">
       <div className="flex items-center gap-4">
         <Link
           to="/challans"
-          className="inline-flex items-center gap-1 text-sm font-semibold text-gray-600 hover:text-brand-600 transition-colors"
+          className="inline-flex items-center gap-1 text-sm font-semibold text-zinc-400 hover:text-cyan-400 transition-colors"
         >
           <ArrowLeft className="w-4 h-4" />
           Back to Challans
@@ -140,8 +140,8 @@ export const ChallanCreatePage: React.FC = () => {
       </div>
 
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">Create New Sales Challan</h1>
-        <p className="text-sm text-gray-500 mt-1">
+        <h1 className="text-2xl font-extrabold text-white tracking-tight">Create New Sales Challan</h1>
+        <p className="text-xs text-zinc-400 mt-1 font-medium">
           Select customer, add products, verify unit prices, and save as a DRAFT.
         </p>
       </div>
@@ -150,8 +150,8 @@ export const ChallanCreatePage: React.FC = () => {
 
       <form onSubmit={handleSubmitDraft} className="space-y-6">
         {/* Customer Selection Card */}
-        <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-xs">
-          <h2 className="text-base font-bold text-gray-900 mb-4 border-b border-gray-100 pb-2">
+        <div className="rounded-2xl border border-zinc-800 bg-zinc-900/90 p-6 shadow-xl backdrop-blur-md">
+          <h2 className="text-base font-bold text-white mb-4 border-b border-zinc-800/80 pb-2">
             1. Select Customer Account
           </h2>
           <Select
@@ -168,9 +168,9 @@ export const ChallanCreatePage: React.FC = () => {
         </div>
 
         {/* Product Items Table Card */}
-        <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-xs space-y-4">
-          <div className="flex items-center justify-between border-b border-gray-100 pb-2">
-            <h2 className="text-base font-bold text-gray-900">2. Add Line Products</h2>
+        <div className="rounded-2xl border border-zinc-800 bg-zinc-900/90 p-6 shadow-xl space-y-4 backdrop-blur-md">
+          <div className="flex items-center justify-between border-b border-zinc-800/80 pb-2">
+            <h2 className="text-base font-bold text-white">2. Add Line Products</h2>
             <Button type="button" variant="outline" size="sm" onClick={handleAddItemRow}>
               <Plus className="w-4 h-4 mr-1" /> Add Product Row
             </Button>
@@ -185,7 +185,7 @@ export const ChallanCreatePage: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="grid grid-cols-1 sm:grid-cols-12 gap-3 p-3 rounded-lg border border-gray-200 bg-gray-50/60 items-center"
+                  className="grid grid-cols-1 sm:grid-cols-12 gap-3 p-3.5 rounded-xl border border-zinc-800/80 bg-zinc-950/60 items-center"
                 >
                   <div className="sm:col-span-5">
                     <Select
@@ -202,8 +202,8 @@ export const ChallanCreatePage: React.FC = () => {
                   </div>
 
                   <div className="sm:col-span-2 text-xs">
-                    <p className="font-semibold text-gray-500 uppercase">Available Stock</p>
-                    <p className={`font-bold mt-1 ${isInsufficient ? 'text-rose-600 font-extrabold' : 'text-gray-800'}`}>
+                    <p className="font-semibold text-zinc-400 uppercase">Available Stock</p>
+                    <p className={`font-bold mt-1 ${isInsufficient ? 'text-rose-400 font-extrabold' : 'text-zinc-200'}`}>
                       {selectedProduct ? `${selectedProduct.currentStock} units` : '-'}
                     </p>
                   </div>
@@ -220,8 +220,8 @@ export const ChallanCreatePage: React.FC = () => {
                   </div>
 
                   <div className="sm:col-span-2 text-xs">
-                    <p className="font-semibold text-gray-500 uppercase">Line Total</p>
-                    <p className="font-bold text-brand-600 text-sm mt-1">
+                    <p className="font-semibold text-zinc-400 uppercase">Line Total</p>
+                    <p className="font-extrabold text-cyan-400 text-sm mt-1">
                       ₹{lineTotal.toLocaleString('en-IN', { minimumFractionDigits: 2 })}
                     </p>
                   </div>
@@ -231,14 +231,14 @@ export const ChallanCreatePage: React.FC = () => {
                       type="button"
                       onClick={() => handleRemoveItemRow(idx)}
                       disabled={items.length <= 1}
-                      className="p-1.5 text-gray-400 hover:text-rose-600 disabled:opacity-30"
+                      className="p-1.5 text-zinc-500 hover:text-rose-400 disabled:opacity-20 transition-colors"
                     >
                       <Trash2 className="w-4 h-4" />
                     </button>
                   </div>
 
                   {isInsufficient && (
-                    <div className="sm:col-span-12 text-xs text-rose-600 font-semibold flex items-center gap-1 mt-1">
+                    <div className="sm:col-span-12 text-xs text-rose-400 font-bold flex items-center gap-1 mt-1">
                       <AlertCircle className="w-3.5 h-3.5" /> Note: Requested quantity ({item.quantity}) exceeds available stock ({selectedProduct.currentStock}). Challan can be saved as DRAFT, but confirmation will be rejected.
                     </div>
                   )}
@@ -249,17 +249,17 @@ export const ChallanCreatePage: React.FC = () => {
         </div>
 
         {/* Calculation Summary & Submit */}
-        <div className="rounded-xl border border-brand-200 bg-brand-50/50 p-6 shadow-xs flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+        <div className="rounded-2xl border border-cyan-500/30 bg-cyan-950/20 p-6 shadow-xl flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 backdrop-blur-md">
           <div>
-            <p className="text-xs font-semibold uppercase text-brand-700">Order Summary</p>
+            <p className="text-xs font-bold uppercase text-cyan-400 tracking-wider">Order Summary</p>
             <div className="flex items-center gap-6 mt-1">
               <div>
-                <span className="text-xs text-gray-500">Total Quantity:</span>{' '}
-                <span className="font-bold text-gray-900">{grandTotalQuantity} units</span>
+                <span className="text-xs text-zinc-400">Total Quantity:</span>{' '}
+                <span className="font-bold text-white">{grandTotalQuantity} units</span>
               </div>
               <div>
-                <span className="text-xs text-gray-500">Total Amount:</span>{' '}
-                <span className="font-extrabold text-xl text-brand-700">
+                <span className="text-xs text-zinc-400">Total Amount:</span>{' '}
+                <span className="font-extrabold text-xl text-cyan-400">
                   ₹{grandTotalAmount.toLocaleString('en-IN', { minimumFractionDigits: 2 })}
                 </span>
               </div>
